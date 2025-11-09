@@ -2,8 +2,8 @@ import { defineConfig } from "tinacms";
 
 export default defineConfig({
   branch: "master", // your Git branch
-  clientId: "process.env.NEXT_PUBLIC_TINA_CLIENT_ID!", // ✅ no quotes here
-  token: "1212", // used for local development only
+  clientId: "99c5b6c2-a688-4f47-8a8b-8337bc8b95ef", // ✅ no quotes here
+  token: "0121c328c3cc948dc6b3889403070518ad55ca73", // used for local development only
   build: {
     outputFolder: "admin",
     publicFolder: "public",
