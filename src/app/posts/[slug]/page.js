@@ -57,7 +57,7 @@ export async function generateMetadata({ params }) {
       images: [data.featureImage],
     },
     alternates: {
-      canonical: `${baseUrl}/blog/${slug}`,
+      canonical: `${baseUrl}/posts/${slug}`,
     },
   };
 }
@@ -130,10 +130,10 @@ export default function PostPage({ params }) {
             },
             datePublished: data.date,
             dateModified: data.date,
-            url: `https://8bil.com/blog/${slug}`,
+            url: `https://8bil.com/posts/${slug}`,
             publisher: {
               "@type": "Organization",
-              name: "Your Site Name",
+              name: "8 Bil",
               logo: {
                 "@type": "ImageObject",
                 url: "https://8bil.com/logo.png",
