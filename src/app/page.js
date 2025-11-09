@@ -36,7 +36,7 @@ export default function HomePage() {
             className="border-b border-gray-200 pb-4 hover:bg-gray-50 rounded-lg transition"
           >
             <Link href={`/posts/${post.slug}`}>
-              <h2 className="text-xl font-semibold text-blue-600 hover:underline">
+              <h2 className="text-xl font-medium tracking-wider text-blue-600 hover:underline">
                 {post.title}
               </h2>
             </Link>

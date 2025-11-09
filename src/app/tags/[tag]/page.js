@@ -46,7 +46,7 @@ export default function TagPage({ params }) {
           {filteredPosts.map((post) => (
             <div key={post.slug} className="border-b border-zinc-200 pb-4">
               <Link
-                href={`/post/${post.slug}`}
+                href={`/posts/${post.slug}`}
                 className="text-xl font-semibold text-blue-600 hover:underline"
               >
                 {post.title}
