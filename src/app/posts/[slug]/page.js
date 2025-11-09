@@ -31,7 +31,7 @@ export async function generateMetadata({ params }) {
 
   const fileContent = fs.readFileSync(filePath, "utf8");
   const { data } = matter(fileContent);
-  const baseUrl = "https://8bil.com";
+  const baseUrl = "https://www.8bil.com";
 
   return {
     title: data.title,
@@ -130,13 +130,13 @@ export default function PostPage({ params }) {
             },
             datePublished: data.date,
             dateModified: data.date,
-            url: `https://8bil.com/posts/${slug}`,
+            url: `https://www.8bil.com/posts/${slug}`,
             publisher: {
               "@type": "Organization",
               name: "8 Bil",
               logo: {
                 "@type": "ImageObject",
-                url: "https://8bil.com/logo.png",
+                url: "https://www.8bil.com/logo.png",
               },
             },
           }),
