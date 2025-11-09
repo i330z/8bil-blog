@@ -2,6 +2,8 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
+import Link from "next/link";
+import Image from "next/image";
 
 // ✅ Generate static params for all .md posts
 export async function generateStaticParams() {
@@ -76,17 +78,36 @@ export default function PostPage({ params }) {
 
   const fileContent = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContent);
+  console.log(data);
   const htmlContent = marked(content);
 
   return (
     <article className="max-w-3xl mx-auto px-4 py-10 prose prose-lg">
-      <h1 className="text-4xl mb-2 py-20 capitalize font-semibold border-t-2 border-b-2 border-gray-200 border-dashed text-center">
+      <div className="relative h-64 w-full">
+        <Image
+          src={data?.featureImage}
+          alt={data?.title || "Feature image"}
+          fill
+          className="object-contain"
+          priority
+        />
+      </div>
+
+      <h1 className="text-4xl mb-2 py-20 capitalize font-semibold border-b-2 border-gray-200 border-dashed text-center">
         {data.title}
       </h1>
       <p className="text-gray-500 text-sm mb-6">
         {new Date(data.date).toLocaleDateString()} — {data.author}
       </p>
       <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+
+      <div className="border-t border-dashed border-2 border-gray-200"></div>
+
+      {data.tags.map((tag, index) => (
+        <Link key={index} href={`/tags/${tag}`} className="text-blue-500 hover:underline mr-2">
+          #{tag}
+        </Link>
+      ))}
       <p className="mt-10">
         <a href="/" className="text-blue-600 hover:underline">
           ← Back to all posts
