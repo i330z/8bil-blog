@@ -61,7 +61,7 @@ Once it is set, now you can work on your project with firebase firestore.
 
 ***
 
-## Add Document in Firebase (setDoc) 
+## Add Document in Firebase (addDoc) 
 
 ```javascript
 import { collection, addDoc } from "firebase/firestore";
