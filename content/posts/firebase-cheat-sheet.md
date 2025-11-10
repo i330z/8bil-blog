@@ -87,3 +87,29 @@ addUser();
 ```
 
 This will add the document to the users collection.
+
+## Set Document in Firebase (setDoc)
+
+```javascript
+import { collection, doc, setDoc } from "firebase/firestore";
+
+async function addMultipleUsers() {
+  const usersRef = collection(db, "users");
+
+  await setDoc(doc(usersRef, "user1"), {
+    name: "Jim Halpert",
+    role: "Sales Representative",
+    atOffice: false,
+  });
+
+
+  console.log("Users added!");
+}
+
+addMultipleUsers();
+
+```
+
+This will set the document in users collection of firebase.
+
+[Firebase Documentation](https://firebase.google.com/docs/firestore/query-data/queries#example_data)
